@@ -1,0 +1,42 @@
+<%- include('partials/header') %>
+    <div class="signup-container bg-red-600">
+        <div class="inner-signup-container">
+            <div class="head">
+                <h1 class="text-center text-3xl pb-2 pt-5">Sign Up</h1>
+            </div>    
+        </div>
+        <div class="signup-content">
+            <% if (message.error) { %>
+                <div class="message-box message-box-danger p-5 text-white mb-3 shadow-md">
+                    <%= message.error %>
+                    <button type="button" class="close" aria-label="Close" onclick="closeMessageBox()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            <% } %>
+            <form action="/signup" method="post">
+                <div class="label-container">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" name="firstName" placeholder="First Name" value="<%= firstName %>" required>    
+                </div>
+                <div class="label-container">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" name="lastName" placeholder="Last Name" value="<%= lastName %>" required>    
+                </div>
+                <div class="label-container">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" placeholder="Username" value="<%= username %>" required autocomplete="username">    
+                </div>
+                <div class="label-container">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" placeholder="Email Address" value="<%= email %>" required autocomplete="email">
+                </div>
+                <div class="label-container">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" placeholder="Password" required autocomplete="current-password">
+                </div>
+                <button class="px-4 py-2 bg-transparent border border-white text-white hover:bg-amber-700 rounded" type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+<%- include('partials/footer') %>

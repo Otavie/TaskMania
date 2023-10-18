@@ -1,0 +1,30 @@
+<%- include('partials/header') %>
+    <div class="login-container bg-red-600">
+        <div class="inner-login-container">
+            <div class="head">
+                <h1 class="text-center text-3xl pb-2 pt-5">Login</h1>
+            </div>    
+        </div>
+        <div class="login-content">
+            <% if (message.error) { %>
+                <div class="message-box bg-red-500 p-5 text-white mb-3 shadow-md">
+                    <%= message.error %>
+                    <button type="button" class="close" aria-label="Close" onclick="closeMessageBox()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            <% } %>
+            <form action="/login" method="post">
+                <div class="label-container">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="Username" required autocomplete="username">    
+                </div>
+                <div class="label-container">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Password" required autocomplete="current-password">
+                </div>
+                <button class="px-4 py-2 bg-transparent border border-white text-white hover:bg-amber-700 rounded" type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+<%- include('partials/footer') %>

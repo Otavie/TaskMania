@@ -1,0 +1,120 @@
+<%- include('partials/header') %>
+    <div class="task-container bg-red-600">
+        <div class="inner-task-container">
+            <div class="head">
+                <h1 class="text-center text-3xl pb-2 pt-5 capitalize"><%= displayedName %>'s TM Board</h1>
+            </div>
+            <button class="btn create-task-button create-task-button-lg">Create Task</button>
+            <button class="btn create-task-button create-task-button-sm mr-3"><i class="fa-solid fa-plus"></i></button>
+        </div>
+
+        <% if (message.error) { %>
+            <div class="message-box message-box-danger p-5 text-white mb-3 shadow-md">
+                <%= message.error %>
+                <button type="button" class="close" aria-label="Close" onclick="closeMessageBox()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        <% } %>
+        
+        <% if (message.success) { %>
+            <div class="message-box message-box-success p-5 text-white mb-3 shadow-md">
+                <%= message.success %>
+                <button type="button" class="close" aria-label="Close" onclick="closeMessageBox()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        <% } %>
+
+        <div class="filter-buttons-container">
+            <div class="filter-buttons">
+                <div class="select-filter-state">
+                    <span>Filter by</span>
+                </div>
+                <div class="filter-options">
+                    <a href="/tasks?state=all" class="<%= selectedState === 'all' ? 'selected' : '' %>">All</a>
+                    <a href="/tasks?state=Pending" class="<%= selectedState === 'Pending' ? 'selected' : '' %>">Pending</a>
+                    <a href="/tasks?state=Completed" class="<%= selectedState === 'Completed' ? 'selected' : '' %>">Completed</a>
+                </div>
+            </div>    
+        </div>
+        
+        <div class="tasks-list-container">
+            <div class="tasks-list tasks-list-head text-white">
+                <h2 class="serial-numbers-head">No</h2>
+                <h2 class="displayed-task-title-head">Task Title</h2>
+                <h2 class="displayed-task-state-head">Task State</h2>
+                <h2 class="edit-delete-button-container-head">Actions</h2>
+            </div>
+
+            <% if (tasks && tasks.length > 0) { %>
+                <% tasks.forEach((task, index) => { %>
+                    <div class="tasks-list text-white">
+                        <div class="serial-numbers"><%= index + 1 %>.</div>
+                        <div class="displayed-task-title">
+                            <details>
+                                <summary><%= task.title %></summary>
+                                <p><%= task.description %></p>
+                            </details>
+                        </div>
+                        <div class="displayed-task-state"><%= task.state %></div>
+                        <div class="edit-delete-button-container">
+                            <a href="/delete/<%= task._id %>">
+                                <i class="fa-solid fa-trash" style="color: #ff0000;"></i> <!-- Delete -->
+                            </a>
+                            <a href="/edit/<%= task._id %>">
+                                <i class="fa-solid fa-pen-to-square"></i> <!-- Edit -->
+                            </a>
+                        </div>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <div class="task-list text-white">
+                    <p>No Task Found!</p>
+                </div>
+            <% } %>
+
+        </div>
+
+        <div id="task-modal-custom" class="task-modal-custom">
+            <div class="modal-content-custom">
+                
+                <span class="close-model-custom" id="close-model-custom">&times;</span>
+                <h2 class="my-5 text-white">Create a New Task</h2>
+    
+                <!-- Check the Route Here -->
+                <form action="/tasks" method="post" id="task-form">
+                    <div class="label-container">
+                        <label for="title" class="mr-2">Task Title:</label>
+                        <input type="text" name="title" id="title" placeholder="Task Title" required>    
+                    </div>
+                    <div class="label-container">
+                        <label for="description" class="mr-2">Description or Details:</label>
+                        <textarea name="description" id="description" placeholder="Short description about the task"></textarea>
+                    </div>
+                    <div class="state-container">
+                        <div class="select-state">
+                            <span>Select State</span>
+                        </div>
+                        <div class="state-options">
+                            <div class="option">Pending</div>
+                            <div class="option">Completed</div>
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="state" id="state">
+
+                    <!-- <div class="save-button-container"> -->
+                    <div class="task-button-container">
+                        <button type="submit" class="task-button">Save Task</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    
+    </div>
+
+    
+<%- include('partials/footer') %>

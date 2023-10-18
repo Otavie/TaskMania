@@ -1,0 +1,33 @@
+{
+  "name": "altschool-assignment-7-todo-app",
+  "version": "1.0.0",
+  "description": "The ToDo Application is a web-based task management tool built with Node.js, Express.js, MongoDB, Passport.js and EJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app",
+    "build:css": "npx tailwindcss -i ./public/stylesheets/App.css -o ./public/stylesheets/tailwind.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "connect-ensure-login": "^0.1.1",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-flash": "^0.0.2",
+    "express-flash-message": "^3.0.2",
+    "express-session": "^1.17.3",
+    "mongodb": "^6.1.0",
+    "mongoose": "^7.6.0",
+    "nodemon": "^3.0.1",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^8.0.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  }
+}
