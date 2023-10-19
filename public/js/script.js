@@ -38,6 +38,8 @@ if (path === '/') {
     navClass = 'edit hide';
 } else if (path.startsWith('/delete')) {
     navClass = 'delete hide';
+} else {
+    navClass = 'home hide'; 
 }
 
 document.querySelector('.nav-link').className = `nav-link ${navClass}`; 
