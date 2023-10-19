@@ -69,14 +69,6 @@ selectState.addEventListener('click', () => {
 
 const selectFilterState = document.querySelector(".select-filter-state");
 const filterOptions = document.querySelector(".filter-options");
-// const filterLinks = document.querySelectorAll(".filter");
-
-// filterLinks.forEach((link) => {
-//     link.addEventListener('click', () => {
-//         selectFilterState.textContent = link.textContent;
-//         filterOptions.classList.remove('active');
-//     })
-// })
 
 selectFilterState.addEventListener('click', () => {
     filterOptions.classList.toggle('active');

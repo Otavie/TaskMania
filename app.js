@@ -75,6 +75,16 @@ app.use((req, res, next) => {
 // Define the Base Path for Routes
 app.use('/', routes);
 
+// Page Not Found Route
+app.use((req, res) => {
+    res.status(404).render('404', {
+        title: "Page Not Found",
+        links: [ { link_name: 'Home', url: '/' }],
+        message: {},
+        req: req,
+    });
+});
+
 app.listen(PORT, () => {
     console.log(`Server is running on PORT http://localhost:${PORT}`);
 })

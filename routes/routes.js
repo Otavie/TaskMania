@@ -11,8 +11,6 @@ const logoutRoute = require('./logout.routes');
 const editRoute = require('./tasks.edit.routes');
 const deleteRoute = require('./task.delete.routes');
 
-
-
 // Define All the Routes
 router.use('/', indexRoute);
 router.use('/tasks', connectEnsureLogin.ensureLoggedIn(), tasksRoute);
@@ -21,6 +19,5 @@ router.use('/login', authLoginRoute);
 router.use('/logout', logoutRoute);
 router.use('/edit', editRoute);
 router.use('/delete', deleteRoute);
-
 
 module.exports = router;
