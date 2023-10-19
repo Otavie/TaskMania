@@ -10,28 +10,50 @@ TaskMania is a feature-rich and user-friendly todo app that helps you manage you
 
 - **Create Tasks**: Easily create new tasks by providing a title, description, and other details.
 
-- **Organize Tasks**: Group your tasks into categories, set due dates, and assign priorities.
+- **Filter Tasks**: Filter tasks by states such as completed and pending.
 
 - **Edit and Update**: Modify your task details, change statuses, and update your tasks as needed.
 
-- **Mark as Completed**: Quickly mark tasks as completed, keeping your list tidy and up to date.
-
 - **Dashboard**: Access your personalized dashboard to view an overview of your tasks.
-
-- **Task Filtering**: Filter tasks by categories, priorities, and completion status for better organization.
-
-- **Search Functionality**: Find specific tasks using the search feature, saving time and effort.
 
 - **Responsive Design**: Enjoy a seamless experience on various devices, from desktop to mobile.
 
-- **Task Statistics**: Get insights into your task management with statistics on completed tasks.
+## Technology Stack
+
+### Frontend Tools
+
+- **Tailwind CSS**: A utility-first CSS framework that helps in creating responsive and efficient designs.
+- **EJS Templates**: A templating engine for rendering dynamic content in the app.
+- **Custom CSS**: Custom styling for an enhanced user experience.
+
+### Backend Tools
+
+- **Node.js**: A JavaScript runtime for building the backend of the application.
+- **Express.js**: A web application framework for Node.js, used for routing and handling HTTP requests.
+- **MongoDB**: A NoSQL database for storing and managing data efficiently.
+
+### Dependencies
+
+- **body-parser**: Middleware for parsing request bodies.
+- **connect-ensure-login**: Middleware for ensuring user authentication.
+- **dotenv**: Library for loading environment variables from a `.env` file.
+- **EJS**: The EJS templating engine.
+- **Express**: The Express.js web framework.
+- **Express-flash**: Middleware for displaying flash messages.
+- **Express-session**: Middleware for managing user sessions.
+- **MongoDB**: The MongoDB database driver.
+- **Mongoose**: An ODM (Object-Document Mapping) library for MongoDB.
+- **Nodemon**: A utility that automatically restarts the Node.js application when changes are detected. This is used during development.
+- **Passport**: Authentication middleware for Node.js.
+- **Passport-local**: A Passport strategy for authenticating with a username and password.
+- **Passport-local-mongoose**: A Mongoose plugin simplifying Passport authentication.
 
 ## Getting Started
 
 1. Clone the TaskMania repository to your local machine.
 
    ```
-   git clone <repository-url>
+   git clone https://github.com/Otavie/TaskMania.git
    ```
 
 2. Install the required dependencies.
@@ -67,7 +89,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 Give TaskMania a try and boost your productivity with efficient task management! Enjoy a clean, user-friendly interface, and make your todo list management hassle-free. TaskMania is your perfect todo app companion.
 
-For more information and updates, visit our [website](http://www.taskmania-app.com).
+For more information and updates, visit our [website](https://taskmania.onrender.com/).
 
 # TaskMania - Advanced Todo App
 
