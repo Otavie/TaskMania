@@ -2,6 +2,11 @@
 
 TaskMania is a feature-rich and user-friendly todo app that helps you manage your tasks efficiently. Whether you want to create, organize, edit, or view your task list, TaskMania has got you covered.
 
+## Entity Relationship Diagram (ERD)
+
+To view the ERD for this database design, please visit the [ERD Diagram](https://drawsql.app/teams/otavie/diagrams/taskmania) for a visual representation of the entity relationships.
+
+
 ## Features
 
 - **User-Friendly Interface**: TaskMania provides a sleek and intuitive user interface, making task management a breeze.
