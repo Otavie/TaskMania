@@ -663,6 +663,7 @@ video {
   --green-custom: #008000;
   --white-custom: #ffffff;
   --red-custom: #ff0000;
+  --light-red-custom: #ff4141;
   --gray-custom: #808080;
 }
 
@@ -680,6 +681,10 @@ video {
 body {
   width: 100%;
   overflow-x: hidden !important;
+}
+
+.not-found {
+  color: var(--light-red-custom) !important;
 }
 
 .nav-link ul li {
